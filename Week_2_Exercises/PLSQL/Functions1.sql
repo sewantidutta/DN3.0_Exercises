@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION CalAge (
+    DOB IN DATE
+) RETURN NUMBER
+
+IS
+    age NUMBER;
+
+BEGIN
+    age := FLOOR(MONTHS_BETWEEN(SYSDATE, DOB) / 12);
+    RETURN age;
+    
+END CalAge;
+/
